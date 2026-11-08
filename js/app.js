@@ -1,0 +1,4 @@
+"use strict";
+(()=>{const nodes='section,.panel,.stat,.tasks,.file,.window,.person,.hero,canvas'.split(',').flatMap(s=>[...document.querySelectorAll(s)]);const unique=[...new Set(nodes)].filter(n=>!n.closest('.side'));if(!('IntersectionObserver'in window)){unique.forEach(n=>n.classList.add('visible'));return}const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.08});unique.forEach(n=>{n.classList.add('reveal');io.observe(n)});})();
+
+document.querySelector('#form').onsubmit=e=>{e.preventDefault();let v=document.querySelector('#text'),m=document.createElement('div');m.className='msg mine';m.textContent=v.value.trim();if(!m.textContent)return;document.querySelector('#feed').append(m);v.value='';document.querySelector('#feed').scrollTop=999999}
