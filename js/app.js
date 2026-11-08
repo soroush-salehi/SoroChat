@@ -21,4 +21,9 @@ $("#form").addEventListener("submit",event=>{
  messages.push({id:crypto.randomUUID?.()||String(Date.now()),text,at:Date.now(),mine:true});
  input.value="";save();render();input.focus();
 });
+$("#clearChat").addEventListener("click",()=>{
+ if(!messages.length)return;
+ if(!confirm("Clear the messages saved in this browser?"))return;
+ messages=[];save();render();
+});
 load();render();
