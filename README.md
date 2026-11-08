@@ -1,22 +1,21 @@
 # SoroChat
 
-A local messaging interface prototype.
+A local messaging-interface prototype for exploring a simple chat experience.
 
-## Features
-- Simple message composer
-- Local message rendering
-- Responsive conversation layout
-- No account or network connection
+## Current features
+- Send and display local messages.
+- Message timestamps.
+- Persist chat history in the current browser.
+- Clear local message history.
+
+## Stack
+HTML, CSS, Vanilla JavaScript, localStorage.
 
 ## Run
-Open `index.html` in a modern browser.
+Open `index.html` through a local static web server.
 
-## Scope
-Messages exist only in the current page session. This is not a live service and does not provide end-to-end encryption. Production use requires authentication, authorization and a secure transport layer.
+## Important limitations
+Messages are not sent to another person. There are no accounts, server, real-time transport, or end-to-end encryption. Do not treat this prototype as a private messaging service.
 
-## Structure
-- `index.html` — conversation interface and local message handling
-- `README.md` — project documentation
-
-## License
-No license selected. All rights reserved until a license is added.
+## Roadmap
+PHP authentication, WebSocket-based messaging, groups, attachments, moderation, and a security review.
